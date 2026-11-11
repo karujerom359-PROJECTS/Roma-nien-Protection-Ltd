@@ -1,0 +1,25 @@
+:root{--navy:#071a32;--blue:#102d50;--gold:#d5a43b;--white:#fff;--light:#f3f6fa;--text:#344257}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.7}
+a{text-decoration:none;color:inherit}.container{width:90%;max-width:1200px;margin:auto}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 3px 15px #0003}
+.navbar{min-height:82px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font-size:21px;font-weight:900;color:#fff;line-height:1.2}.logo span{display:block;color:var(--gold);font-size:11px;letter-spacing:3px;margin-top:6px}
+.nav-links{display:flex;list-style:none;gap:24px}.nav-links a{color:#fff;font-size:12px;font-weight:700}.nav-links a:hover,.nav-links a.current{color:var(--gold)}
+.menu-toggle{display:none;font-size:28px;color:#fff;background:none;border:0;cursor:pointer}
+.hero{min-height:440px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,#041224ed,#04122499),url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{padding:85px 0;max-width:780px}.eyebrow,.section-title small{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(36px,6vw,62px);line-height:1.13;margin:18px 0}.hero h1 span{color:var(--gold)}.hero p{max-width:680px;color:#e2e8f0;margin-bottom:26px}
+.btn{display:inline-block;padding:13px 24px;background:var(--gold);color:var(--navy);font-weight:800;font-size:12px;letter-spacing:1px;border:0;cursor:pointer;border-radius:2px}
+.btn:hover{background:#fff}.btn-outline{background:transparent;color:#fff;border:1px solid #fff;margin-left:8px}
+section{padding:75px 0}.section-title{text-align:center;margin-bottom:42px}.section-title h2{color:var(--navy);font-size:clamp(27px,4vw,38px);margin:10px 0}.section-title p{max-width:700px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;padding:28px;box-shadow:0 8px 25px #102d5010;border-bottom:4px solid transparent}.card:hover{border-color:var(--gold);transform:translateY(-4px);transition:.25s}.card h3{color:var(--navy);margin:10px 0}.icon{font-size:34px}
+.light{background:var(--light)}.dark{background:var(--navy);color:#fff}.dark .section-title h2{color:#fff}.dark .card{background:#ffffff0c;color:#d8e0eb;border:1px solid #ffffff25}.dark .card h3{color:var(--gold)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.feature-img{width:100%;height:390px;object-fit:cover;border-radius:4px}.copy h2{color:var(--navy);font-size:32px;line-height:1.25;margin:12px 0 18px}.copy p{margin-bottom:14px}
+.check-list{list-style:none;margin:18px 0}.check-list li{padding:6px 0}.check-list li:before{content:"✓";color:var(--gold);font-weight:bold;margin-right:10px}
+.cta{background:linear-gradient(120deg,#071a32,#183d65);color:#fff;text-align:center}.cta h2{font-size:clamp(27px,4vw,40px);margin-bottom:12px}.cta p{margin-bottom:24px;color:#d8e0eb}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:35px}.contact-detail{background:#fff;padding:17px;margin:12px 0;border-left:4px solid var(--gold)}.contact-detail strong{display:block;color:var(--navy)}
+.contact-form{background:#fff;padding:30px;box-shadow:0 8px 25px #102d5010}.contact-form h3{color:var(--navy);margin-bottom:18px}.contact-form input,.contact-form textarea{width:100%;padding:13px;margin-bottom:13px;border:1px solid #dce2e9;font:inherit}.contact-form textarea{min-height:130px}
+footer{background:#041020;color:#fff;padding:45px 0 18px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;padding-bottom:28px}footer h3{color:var(--gold);margin-bottom:12px}footer p,footer li{font-size:13px;color:#c1cad7}footer ul{list-style:none}footer li{margin:6px 0}.copyright{border-top:1px solid #ffffff20;padding-top:17px;text-align:center;font-size:12px;color:#aab5c5}
+@media(max-width:850px){.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:82px;left:0;width:100%;background:var(--navy);padding:20px 5%;flex-direction:column;gap:15px}.nav-links.show{display:flex}.two-col,.contact-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid,.footer-grid{grid-template-columns:1fr}.hero{min-height:390px}.hero-content{padding:65px 0}.btn{margin:5px 0}.feature-img{height:280px}section{padding:58px 0}}
