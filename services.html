@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Services | Romanien Protection Limited</title>
+  <meta name="description" content="Romanien Protection Limited security services — facility and site protection, protective operations, technology-enabled monitoring and security reporting in Papua New Guinea.">
+<style>
+    :root {
+      --navy: #1A365D;
+      --navy-dark: #0F2942;
+      --navy-mid: #2A4365;
+      --maroon: #8B1A1A;
+      --maroon-dark: #6B1212;
+      --gold: #D69E2E;
+      --gold-soft: #FEFCBF;
+      --white: #FFFFFF;
+      --off-white: #F7FAFC;
+      --light-gray: #EDF2F7;
+      --text: #1A202C;
+      --muted: #4A5568;
+      --border: #E2E8F0;
+      --radius: 10px;
+      --shadow: 0 6px 24px rgba(26, 54, 93, 0.08);
+      --shadow-lg: 0 14px 40px rgba(26, 54, 93, 0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    h1, h2, h3, h4 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--navy);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAV */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--navy-dark);
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+    }
+    .brand img {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+    }
+    .brand-name {
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .brand-tag {
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-menu a {
+      color: #CBD5E0;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+    .btn-nav {
+      background: var(--maroon) !important;
+      color: var(--white) !important;
+      padding: 9px 18px !important;
+      border-radius: 6px !important;
+      font-weight: 600 !important;
+    }
+    .btn-nav:hover {
+      background: var(--maroon-dark) !important;
+    }
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, var(--navy-mid) 100%);
+      color: var(--white);
+      padding: 72px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(214,158,46,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      border-left: 3px solid var(--gold);
+      padding-left: 12px;
+    }
+    .hero h1 {
+      font-size: 2.65rem;
+      color: var(--white);
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-desc {
+      font-size: 1.08rem;
+      color: #CBD5E0;
+      max-width: 520px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-maroon {
+      background: var(--maroon);
+      color: var(--white);
+    }
+    .btn-maroon:hover {
+      background: var(--maroon-dark);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.35);
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .metric {
+      text-align: center;
+      padding: 12px 8px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--gold);
+      font-family: Georgia, serif;
+    }
+    .metric span {
+      font-size: 0.75rem;
+      color: #A0AEC0;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .hero-panel {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 28px 26px;
+      backdrop-filter: blur(6px);
+    }
+    .hero-logo-wrap {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .hero-logo-wrap img {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      object-fit: cover;
+    }
+    .hero-panel h3 {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .hero-panel ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #E2E8F0;
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+    .check {
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 72px 0;
+    }
+    .section-alt {
+      background: var(--off-white);
+    }
+    .section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+    .section-head .label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin-bottom: 10px;
+    }
+    .section-head h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* CARDS */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+    }
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* SERVICES */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .svc-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .svc-card-head {
+      background: var(--navy);
+      color: var(--white);
+      font-family: Georgia, serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 16px 20px;
+      border-bottom: 3px solid var(--gold);
+    }
+    .svc-card-body {
+      padding: 20px 20px 24px;
+    }
+    .svc-card-body li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+    .svc-card-body li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--maroon);
+      font-weight: 700;
+    }
+
+    /* STRENGTHS */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .strength-item {
+      display: flex;
+      gap: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+    .strength-num {
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 36px;
+    }
+    .strength-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+    .strength-item p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* INDUSTRIES STRIP */
+    .industries-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .ind-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .ind-item h4 {
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+    .ind-item p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* VALUE BANNER */
+    .value-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: var(--white);
+      padding: 56px 0;
+      text-align: center;
+    }
+    .value-banner h2 {
+      color: var(--white);
+      font-size: 1.85rem;
+      margin-bottom: 12px;
+    }
+    .value-banner p {
+      color: #CBD5E0;
+      max-width: 620px;
+      margin: 0 auto 28px;
+      font-size: 1.05rem;
+    }
+    .value-points {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .value-points span {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      color: #E2E8F0;
+    }
+
+    /* CTA */
+    .cta-banner {
+      background: var(--maroon);
+      color: var(--white);
+      text-align: center;
+      padding: 56px 0;
+    }
+    .cta-banner h2 {
+      color: var(--white);
+      font-size: 1.9rem;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+    .cta-banner .btn-maroon {
+      background: var(--white);
+      color: var(--maroon);
+    }
+    .cta-banner .btn-maroon:hover {
+      background: var(--gold-soft);
+      color: var(--navy);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--navy-dark);
+      color: #A0AEC0;
+      padding: 48px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .footer-brand img {
+      height: 42px;
+      width: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      object-fit: cover;
+    }
+    .footer-brand span {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .site-footer h4 {
+      color: var(--gold);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+    .site-footer a {
+      display: block;
+      font-size: 0.9rem;
+      color: #A0AEC0;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .site-footer a:hover {
+      color: var(--gold);
+    }
+    .footer-bottom {
+      text-align: center;
+      padding: 18px 0;
+      font-size: 0.82rem;
+      color: #718096;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-panel { max-width: 420px; margin: 0 auto; }
+      .card-grid, .svc-grid { grid-template-columns: 1fr; }
+      .strength-grid { grid-template-columns: 1fr; }
+      .industries-strip { grid-template-columns: 1fr 1fr; }
+      .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .nav-menu { display: none; }
+      .nav-menu.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--navy-dark);
+        padding: 16px;
+        border-bottom: 3px solid var(--gold);
+        gap: 4px;
+      }
+      .menu-btn { display: block; }
+      .hero h1 { font-size: 2.1rem; }
+    }
+    @media (max-width: 560px) {
+      .industries-strip { grid-template-columns: 1fr; }
+      .hero-metrics { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="site-nav">
+    <div class="container nav-row">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Romanien Protection logo">
+        <div>
+          <div class="brand-name">Romanien Protection</div>
+          <div class="brand-tag">Facility & Asset Protection</div>
+        </div>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html" class="active">Security Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="why-us.html">Why Choose Us</a>
+        <a href="quote.html">Request a Quote</a>
+        <a href="contact.html" class="btn-nav">Contact / Emergency</a>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="hero-label">Professional Security Services</div>
+        <h1>Protection Built Around <em>Your Risk.</em></h1>
+        <p class="hero-desc">
+          Romanien Protection Limited provides comprehensive facility, protective-operation and technology-supported security services tailored to each client’s risk profile and operational reality.
+        </p>
+        <div class="hero-actions">
+          <a href="quote.html" class="btn btn-maroon">Request a Security Quote</a>
+          <a href="contact.html" class="btn btn-ghost">Contact / Emergency</a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric"><strong>Facility</strong><span>Site protection</span></div>
+          <div class="metric"><strong>Protective</strong><span>Operations</span></div>
+          <div class="metric"><strong>Technology</strong><span>Enabled security</span></div>
+          <div class="metric"><strong>24/7</strong><span>Response capability</span></div>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-logo-wrap">
+          <img src="logo.png" alt="Romanien Protection">
+        </div>
+        <h3>Our Protection Pillars</h3>
+        <ul>
+          <li><span class="check">✓</span> Facility & Site Protection</li>
+          <li><span class="check">✓</span> Protective Operations</li>
+          <li><span class="check">✓</span> Technology & Monitoring</li>
+          <li><span class="check">✓</span> Risk Assessment & Planning</li>
+          <li><span class="check">✓</span> Digital Reporting & Accountability</li>
+          <li><span class="check">✓</span> Client-Centred Security Solutions</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Our Service Range</div>
+        <h2>Comprehensive Protection Capabilities</h2>
+        <p>From visible guarding and access control to technology-enabled monitoring and security planning, our services are designed to reduce risk and support business continuity.</p>
+      </div>
+
+      <div class="svc-grid">
+        <article class="svc-card">
+          <div class="svc-card-head">Facility & Site Protection</div>
+          <ul class="svc-card-body">
+            <li>Static and mobile guarding</li>
+            <li>Access control and visitor management</li>
+            <li>Perimeter security</li>
+            <li>Parking and vehicle protection</li>
+            <li>Structural asset safeguarding support</li>
+            <li>Site surveys and protection planning</li>
+            <li>Loading and logistics area security</li>
+          </ul>
+        </article>
+
+        <article class="svc-card">
+          <div class="svc-card-head">Protective Operations</div>
+          <ul class="svc-card-body">
+            <li>Uniformed security officers</li>
+            <li>24/7 monitoring and rapid incident response capability</li>
+            <li>Event and temporary site security</li>
+            <li>Executive/VIP close-protection options on request</li>
+            <li>Escort and specialised movement support</li>
+            <li>Alarm response</li>
+            <li>After-hours coverage</li>
+          </ul>
+        </article>
+
+        <article class="svc-card">
+          <div class="svc-card-head">Technology & Reporting</div>
+          <ul class="svc-card-body">
+            <li>CCTV integration and remote monitoring support</li>
+            <li>Digital occurrence and incident reporting</li>
+            <li>Client dashboards and performance reviews</li>
+            <li>Risk assessment and security surveys</li>
+            <li>Advisory on physical and procedural controls</li>
+            <li>Integration with existing site systems</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Facility & Site Protection</div>
+        <h2>Secure the Site. Protect the Operation.</h2>
+        <p>Professional guarding and site-security controls designed around the physical environment, people, assets and operational activity of each facility.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon">👮</div>
+          <h3>Static & Mobile Guarding</h3>
+          <p>Professional security officers and mobile patrol capability providing visible deterrence, site presence and disciplined protection.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🚪</div>
+          <h3>Access Control</h3>
+          <p>Controlled entry, visitor management and disciplined access procedures designed to strengthen site security.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🚧</div>
+          <h3>Perimeter Security</h3>
+          <p>Protection of site boundaries, external areas, parking, vehicles and vulnerable access points.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📦</div>
+          <h3>Loading & Logistics</h3>
+          <p>Security support for loading areas, logistics movements and operational zones where assets and activity require controlled protection.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🏗️</div>
+          <h3>Asset Safeguarding</h3>
+          <p>Protection support for structural assets, valuable property, equipment and other critical site resources.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🔎</div>
+          <h3>Site Surveys</h3>
+          <p>Security surveys and protection planning to help identify risks and develop practical site-specific controls.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Protective Operations</div>
+        <h2>Ready to Respond When It Matters</h2>
+        <p>Protective operations combine professional personnel, response capability and specialised support for changing security requirements.</p>
+      </div>
+
+      <div class="strength-grid">
+        <div class="strength-item">
+          <div class="strength-num">01</div>
+          <div>
+            <h3>Uniformed Security Officers</h3>
+            <p>Professional, presentable and accountable officers deployed according to site requirements and documented procedures.</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-num">02</div>
+          <div>
+            <h3>24/7 Monitoring & Response</h3>
+            <p>Monitoring and rapid incident response capability supporting clients beyond normal operating hours.</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-num">03</div>
+          <div>
+            <h3>Event & Temporary Security</h3>
+            <p>Flexible security deployments for events, temporary sites and changing operational requirements.</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-num">04</div>
+          <div>
+            <h3>Executive / VIP Protection</h3>
+            <p>Close-protection options available on request for elevated personal-security requirements.</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-num">05</div>
+          <div>
+            <h3>Escort & Specialised Movement</h3>
+            <p>Escort and specialised movement support where security considerations require additional protection.</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-num">06</div>
+          <div>
+            <h3>Alarm & After-Hours Coverage</h3>
+            <p>Alarm response and after-hours security coverage designed to maintain protection when normal operations are closed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Technology & Insight</div>
+        <h2>Technology-Enabled Security</h2>
+        <p>Romanien combines human presence with modern protective technologies and clear reporting to improve visibility, accountability and security decision-making.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon">📹</div>
+          <h3>CCTV Integration</h3>
+          <p>CCTV integration and remote monitoring support to strengthen visibility across protected environments.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📱</div>
+          <h3>Digital Reporting</h3>
+          <p>Digital occurrence and incident reporting provides clear, usable information for clients and management.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📊</div>
+          <h3>Client Dashboards</h3>
+          <p>Client performance dashboards and reviews support clear measurement, accountability and continuous improvement.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">⚠️</div>
+          <h3>Risk Assessment</h3>
+          <p>Risk assessments and security surveys help identify vulnerabilities and establish practical protection priorities.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🧩</div>
+          <h3>Control Advisory</h3>
+          <p>Advisory on physical and procedural controls to strengthen the overall security environment.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🔗</div>
+          <h3>System Integration</h3>
+          <p>Support for integration with existing site systems and the combination of surveillance, alarms, access controls and human presence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="value-banner">
+    <div class="container">
+      <h2>Security Designed Around Your Risk</h2>
+      <p>Every protection solution is intended to support safer operations, reduce exposure and provide clear accountability.</p>
+      <div class="value-points">
+        <span>Prevention-First</span>
+        <span>Intelligence-Led</span>
+        <span>Client-Centred</span>
+        <span>Clear Reporting</span>
+        <span>Rapid Response</span>
+        <span>Continuous Improvement</span>
+        <span>Measurable Outcomes</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Our Delivery Method</div>
+        <h2>From Assessment to Continuous Protection</h2>
+        <p>Our methodology creates a structured path from understanding the client’s environment to continuously improving security performance.</p>
+      </div>
+
+      <div class="strength-grid">
+        <div class="strength-item"><div class="strength-num">01</div><div><h3>Discover & Assess</h3><p>Understand the site, operational environment, assets and security risks.</p></div></div>
+        <div class="strength-item"><div class="strength-num">02</div><div><h3>Design the Solution</h3><p>Develop a protection approach aligned with the client’s specific requirements.</p></div></div>
+        <div class="strength-item"><div class="strength-num">03</div><div><h3>Deploy Professionally</h3><p>Implement trained personnel, procedures, technology and site-specific controls.</p></div></div>
+        <div class="strength-item"><div class="strength-num">04</div><div><h3>Monitor & Report</h3><p>Maintain visibility through monitoring, occurrence reporting and performance information.</p></div></div>
+        <div class="strength-item"><div class="strength-num">05</div><div><h3>Review & Improve</h3><p>Review performance and make proactive recommendations for stronger protection.</p></div></div>
+        <div class="strength-item"><div class="strength-num">06</div><div><h3>Partner Continuously</h3><p>Maintain a long-term client-centred relationship focused on reducing risk and supporting continuity.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Need Professional Security Protection?</h2>
+      <p>Arrange a confidential discussion, professional site survey or tailored protection proposal with Romanien Protection Limited.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+        <a href="quote.html" class="btn btn-maroon">Request a Security Quote</a>
+        <a href="contact.html" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.5);color:#fff;">Contact / Emergency</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="logo.png" alt="Romanien">
+            <span>Romanien Protection</span>
+          </div>
+          <p style="font-size:0.9rem;max-width:300px;line-height:1.6;">
+            Professional facility and asset protection.<br>
+            Powerful Protection • Outstanding Performance • Uncompromising Standards.
+          </p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Security Services</a>
+          <a href="industries.html">Industries We Serve</a>
+          <a href="why-us.html">Why Choose Us</a>
+          <a href="quote.html">Request a Quote</a>
+          <a href="contact.html">Contact / Emergency</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p style="font-size:0.88rem;color:#A0AEC0;margin:0 0 8px;"><strong style="color:#E2E8F0;">Managing Director</strong><br>Ismael Karu</p>
+          <p style="font-size:0.88rem;color:#A0AEC0;margin:0 0 6px;"><a href="tel:+67573475422" style="color:#A0AEC0;">(675) 7347 5422</a></p>
+          <p style="font-size:0.88rem;color:#A0AEC0;margin:0 0 6px;"><a href="mailto:ismaelkaru@gmail.com" style="color:#A0AEC0;">ismaelkaru@gmail.com</a></p>
+          <p style="font-size:0.88rem;color:#A0AEC0;margin:0;">Lae 411, Morobe Province<br>Papua New Guinea</p>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 Romanien Protection Limited. All rights reserved. &nbsp;|&nbsp; Managing Director: Ismael Karu</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Romanien Protection Limited</title>
+  <meta name="description" content="Romanien Protection Limited — professional facility protection, private security and asset safeguarding in Papua New Guinea. Powerful protection. Outstanding performance. Uncompromising standards.">
+  <style>
+    :root {
+      --navy: #1A365D;
+      --navy-dark: #0F2942;
+      --navy-mid: #2A4365;
+      --maroon: #8B1A1A;
+      --maroon-dark: #6B1212;
+      --gold: #D69E2E;
+      --gold-soft: #FEFCBF;
+      --white: #FFFFFF;
+      --off-white: #F7FAFC;
+      --light-gray: #EDF2F7;
+      --text: #1A202C;
+      --muted: #4A5568;
+      --border: #E2E8F0;
+      --radius: 10px;
+      --shadow: 0 6px 24px rgba(26, 54, 93, 0.08);
+      --shadow-lg: 0 14px 40px rgba(26, 54, 93, 0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    h1, h2, h3, h4 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--navy);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAV */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--navy-dark);
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+    }
+    .brand img {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+    }
+    .brand-name {
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .brand-tag {
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-menu a {
+      color: #CBD5E0;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+    .btn-nav {
+      background: var(--maroon) !important;
+      color: var(--white) !important;
+      padding: 9px 18px !important;
+      border-radius: 6px !important;
+      font-weight: 600 !important;
+    }
+    .btn-nav:hover {
+      background: var(--maroon-dark) !important;
+    }
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, var(--navy-mid) 100%);
+      color: var(--white);
+      padding: 72px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(214,158,46,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      border-left: 3px solid var(--gold);
+      padding-left: 12px;
+    }
+    .hero h1 {
+      font-size: 2.65rem;
+      color: var(--white);
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-desc {
+      font-size: 1.08rem;
+      color: #CBD5E0;
+      max-width: 520px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-maroon {
+      background: var(--maroon);
+      color: var(--white);
+    }
+    .btn-maroon:hover {
+      background: var(--maroon-dark);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.35);
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .metric {
+      text-align: center;
+      padding: 12px 8px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--gold);
+      font-family: Georgia, serif;
+    }
+    .metric span {
+      font-size: 0.75rem;
+      color: #A0AEC0;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .hero-panel {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 28px 26px;
+      backdrop-filter: blur(6px);
+    }
+    .hero-logo-wrap {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .hero-logo-wrap img {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      object-fit: cover;
+    }
+    .hero-panel h3 {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .hero-panel ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #E2E8F0;
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+    .check {
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 72px 0;
+    }
+    .section-alt {
+      background: var(--off-white);
+    }
+    .section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+    .section-head .label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin-bottom: 10px;
+    }
+    .section-head h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* CARDS */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+    }
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* SERVICES */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .svc-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .svc-card-head {
+      background: var(--navy);
+      color: var(--white);
+      font-family: Georgia, serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 16px 20px;
+      border-bottom: 3px solid var(--gold);
+    }
+    .svc-card-body {
+      padding: 20px 20px 24px;
+    }
+    .svc-card-body li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+    .svc-card-body li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--maroon);
+      font-weight: 700;
+    }
+
+    /* STRENGTHS */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .strength-item {
+      display: flex;
+      gap: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+    .strength-num {
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 36px;
+    }
+    .strength-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+    .strength-item p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* INDUSTRIES STRIP */
+    .industries-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .ind-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .ind-item h4 {
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+    .ind-item p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* VALUE BANNER */
+    .value-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: var(--white);
+      padding: 56px 0;
+      text-align: center;
+    }
+    .value-banner h2 {
+      color: var(--white);
+      font-size: 1.85rem;
+      margin-bottom: 12px;
+    }
+    .value-banner p {
+      color: #CBD5E0;
+      max-width: 620px;
+      margin: 0 auto 28px;
+      font-size: 1.05rem;
+    }
+    .value-points {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .value-points span {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      color: #E2E8F0;
+    }
+
+    /* CTA */
+    .cta-banner {
+      background: var(--maroon);
+      color: var(--white);
+      text-align: center;
+      padding: 56px 0;
+    }
+    .cta-banner h2 {
+      color: var(--white);
+      font-size: 1.9rem;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+    .cta-banner .btn-maroon {
+      background: var(--white);
+      color: var(--maroon);
+    }
+    .cta-banner .btn-maroon:hover {
+      background: var(--gold-soft);
+      color: var(--navy);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--navy-dark);
+      color: #A0AEC0;
+      padding: 48px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .footer-brand img {
+      height: 42px;
+      width: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      object-fit: cover;
+    }
+    .footer-brand span {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .site-footer h4 {
+      color: var(--gold);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+    .site-footer a {
+      display: block;
+      font-size: 0.9rem;
+      color: #A0AEC0;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .site-footer a:hover {
+      color: var(--gold);
+    }
+    .footer-bottom {
+      text-align: center;
+      padding: 18px 0;
+      font-size: 0.82rem;
+      color: #718096;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-panel { max-width: 420px; margin: 0 auto; }
+      .card-grid, .svc-grid { grid-template-columns: 1fr; }
+      .strength-grid { grid-template-columns: 1fr; }
+      .industries-strip { grid-template-columns: 1fr 1fr; }
+      .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .nav-menu { display: none; }
+      .nav-menu.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--navy-dark);
+        padding: 16px;
+        border-bottom: 3px solid var(--gold);
+        gap: 4px;
+      }
+      .menu-btn { display: block; }
+      .hero h1 { font-size: 2.1rem; }
+    }
+    @media (max-width: 560px) {
+      .industries-strip { grid-template-columns: 1fr; }
+      .hero-metrics { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .gallery-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  .gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .gallery-placeholder {
+    min-height: 220px;
+    padding: 26px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+      linear-gradient(135deg, rgba(26,54,93,.98), rgba(15,41,66,.98));
+    color: var(--white);
+    position: relative;
+  }
+
+  .gallery-placeholder::before {
+    content: "ROMANIEN";
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    font-size: .68rem;
+    letter-spacing: .18em;
+    color: rgba(214,158,46,.9);
+    font-weight: 800;
+  }
+
+  .gallery-placeholder span {
+    width: 52px;
+    height: 52px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  .gallery-placeholder strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.12rem;
+    margin-bottom: 7px;
+  }
+
+  .gallery-placeholder small {
+    color: #CBD5E0;
+    font-size: .78rem;
+  }
+
+  .gallery-caption {
+    padding: 17px 18px 19px;
+  }
+
+  .gallery-caption h3 {
+    margin: 0 0 7px;
+    font-size: 1.02rem;
+  }
+
+  .gallery-caption p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .88rem;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 1000px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <div class="container nav-row">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Romanien Protection logo">
+        <div>
+          <div class="brand-name">Romanien Protection</div>
+          <div class="brand-tag">Facility & Asset Protection</div>
+        </div>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Security Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="security-officers.html">Our Security Officers</a>
+        <a href="compliance.html">Compliance & Licensing</a>
+        <a href="why-us.html">Why Choose Us</a>
+        <a href="quote.html">Request a Quote</a>
+        <a href="contact.html" class="btn-nav">Contact / Emergency</a>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="hero-label">Romanien Protection Gallery</div>
+        <h1>Professional Protection. <em>Presented With Purpose.</em></h1>
+        <p class="hero-desc">
+          Explore the people, protection principles, operating environments and professional standards
+          that represent Romanien Protection Limited.
+        </p>
+
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-maroon">Contact Our Team</a>
+          <a href="quote.html" class="btn btn-ghost">Request a Quote</a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric"><strong>Professional</strong><span>Presentation</span></div>
+          <div class="metric"><strong>Prevention</strong><span>First</span></div>
+          <div class="metric"><strong>Client</strong><span>Centred</span></div>
+          <div class="metric"><strong>High</strong><span>Standards</span></div>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hero-logo-wrap">
+          <img src="logo.png" alt="Romanien Protection">
+        </div>
+        <h3>Gallery Focus</h3>
+        <ul>
+          <li><span class="check">✓</span> Professional security personnel</li>
+          <li><span class="check">✓</span> Facility and site protection</li>
+          <li><span class="check">✓</span> Access control and site awareness</li>
+          <li><span class="check">✓</span> Technology-supported protection</li>
+          <li><span class="check">✓</span> Professional standards and reporting</li>
+          <li><span class="check">✓</span> Protection with purpose</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- GALLERY INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Our Gallery</div>
+        <h2>People, Places, Protection & Professional Standards</h2>
+        <p>
+          This gallery is designed to showcase the professional image and protection philosophy of
+          Romanien Protection Limited. Client-sensitive information, confidential site details and
+          operational security information should never be displayed publicly without authorisation.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon">👮</div>
+          <h3>Professional Officers</h3>
+          <p>
+            Presentable, disciplined and site-ready security personnel supported by clear procedures,
+            site-specific training and an accountability framework.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>Protection in Practice</h3>
+          <p>
+            Facility protection, access control, perimeter awareness, asset safeguarding and response
+            capability working together as one protection approach.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📊</div>
+          <h3>Professional Operations</h3>
+          <p>
+            Clear reporting, documented procedures, performance monitoring and continuous improvement
+            supporting measurable security outcomes.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE-READY GALLERY -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Visual Showcase</div>
+        <h2>Romanien Protection In Focus</h2>
+        <p>
+          The gallery areas below are ready for approved company photographs to be added as the
+          organisation develops its visual library.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-placeholder">
+            <span>01</span>
+            <strong>Security Officers</strong>
+            <small>Approved team photography</small>
+          </div>
+          <div class="gallery-caption">
+            <h3>Professional Security Personnel</h3>
+            <p>Professional appearance, disciplined conduct and clear operational purpose.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-placeholder">
+            <span>02</span>
+            <strong>Facility Protection</strong>
+            <small>Approved site photography</small>
+          </div>
+          <div class="gallery-caption">
+            <h3>Facility & Site Protection</h3>
+            <p>Protection arrangements designed around the operating environment and site requirements.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-placeholder">
+            <span>03</span>
+            <strong>Access Control</strong>
+            <small>Approved operational photography</small>
+          </div>
+          <div class="gallery-caption">
+            <h3>Access & Visitor Management</h3>
+            <p>Structured control of people, vehicles and authorised movement through protected areas.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-placeholder">
+            <span>04</span>
+            <strong>Mobile Patrols</strong>
+            <small>Approved patrol photography</small>
+          </div>
+          <div class="gallery-caption">
+            <h3>Mobile & Response Capability</h3>
+            <p>Visible protection and response capability supporting changing operational requirements.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-placeholder">
+            <span>05</span>
+            <strong>Technology</strong>
+            <small>Approved technology photography</small>
+          </div>
+          <div class="gallery-caption">
+            <h3>Monitoring & Reporting</h3>
+            <p>CCTV integration, digital occurrence reporting and technology-enabled security support.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-placeholder">
+            <span>06</span>
+            <strong>Site Operations</strong>
+            <small>Approved site photography</small>
+          </div>
+          <div class="gallery-caption">
+            <h3>Protection Across Environments</h3>
+            <p>Security designed for industrial, commercial, logistics, institutional and specialised sites.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-placeholder">
+            <span>07</span>
+            <strong>Training</strong>
+            <small>Approved training photography</small>
+          </div>
+          <div class="gallery-caption">
+            <h3>Training & Development</h3>
+            <p>Selection standards, induction, site training and continuous professional development.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-placeholder">
+            <span>08</span>
+            <strong>Professional Standards</strong>
+            <small>Approved company photography</small>
+          </div>
+          <div class="gallery-caption">
+            <h3>Standards You Can Trust</h3>
+            <p>Professional presentation, documented procedures and accountability at every level.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY STANDARDS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Publishing Standards</div>
+        <h2>Protecting Confidentiality While Showing Professionalism</h2>
+        <p>
+          Security photography must support the company's professional image without exposing
+          vulnerabilities, confidential information or sensitive client arrangements.
+        </p>
+      </div>
+
+      <div class="strength-grid">
+        <div class="strength-item">
+          <div class="strength-num">01</div>
+          <div>
+            <h3>Approved Photography</h3>
+            <p>Only authorised company, personnel, site and operational photographs should be published.</p>
+          </div>
+        </div>
+
+        <div class="strength-item">
+          <div class="strength-num">02</div>
+          <div>
+            <h3>Client Confidentiality</h3>
+            <p>Client identities, site layouts, access arrangements and sensitive security information must remain protected.</p>
+          </div>
+        </div>
+
+        <div class="strength-item">
+          <div class="strength-num">03</div>
+          <div>
+            <h3>Professional Presentation</h3>
+            <p>Images should reflect the disciplined appearance, conduct and standards expected from Romanien personnel.</p>
+          </div>
+        </div>
+
+        <div class="strength-item">
+          <div class="strength-num">04</div>
+          <div>
+            <h3>Accurate Representation</h3>
+            <p>Gallery content should accurately represent Romanien services, personnel, equipment and operating capabilities.</p>
+          </div>
+        </div>
+
+        <div class="strength-item">
+          <div class="strength-num">05</div>
+          <div>
+            <h3>Security Awareness</h3>
+            <p>Photography should not reveal vulnerabilities, security routines, access points or information that could increase risk.</p>
+          </div>
+        </div>
+
+        <div class="strength-item">
+          <div class="strength-num">06</div>
+          <div>
+            <h3>Continuous Improvement</h3>
+            <p>The gallery can grow over time as approved professional photographs and verified company activities become available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES STRIP -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Protection Areas</div>
+        <h2>What Our Gallery Can Represent</h2>
+        <p>
+          Approved imagery can help clients understand the breadth of Romanien's professional
+          protection approach.
+        </p>
+      </div>
+
+      <div class="industries-strip">
+        <div class="ind-item">
+          <h4>Facility Guarding</h4>
+          <p>Static and mobile guarding for protected facilities and operating environments.</p>
+        </div>
+
+        <div class="ind-item">
+          <h4>Asset Protection</h4>
+          <p>Protection principles for property, equipment and high-value assets.</p>
+        </div>
+
+        <div class="ind-item">
+          <h4>Risk Assessment</h4>
+          <p>Site surveys and protection planning based on identified risks and priorities.</p>
+        </div>
+
+        <div class="ind-item">
+          <h4>Mobile Patrols</h4>
+          <p>Visible patrol and response capability supporting prevention and rapid escalation.</p>
+        </div>
+
+        <div class="ind-item">
+          <h4>Event Security</h4>
+          <p>Temporary and event-focused protection designed around specific requirements.</p>
+        </div>
+
+        <div class="ind-item">
+          <h4>Access Control</h4>
+          <p>People, visitor and vehicle management supporting secure site operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE BANNER -->
+  <section class="value-banner">
+    <div class="container">
+      <h2>Professional People. Better Processes. Stronger Protection.</h2>
+      <p>
+        Every approved image should communicate the same standard behind our services:
+        prevention-first thinking, disciplined personnel, clear accountability and client-centred protection.
+      </p>
+
+      <div class="value-points">
+        <span>Professional appearance</span>
+        <span>Prevention-first culture</span>
+        <span>Clear accountability</span>
+        <span>Client-centred service</span>
+        <span>Technology-enabled protection</span>
+        <span>Uncompromising standards</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Need Professional Security for Your Site?</h2>
+      <p>
+        Talk to Romanien Protection Limited about facility protection, asset safeguarding,
+        risk assessment or a tailored security solution.
+      </p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+        <a href="quote.html" class="btn btn-maroon">Request a Security Quote</a>
+        <a href="contact.html" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.5);color:#fff;">Contact Our Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="logo.png" alt="Romanien">
+            <span>Romanien Protection</span>
+          </div>
+          <p style="font-size:0.9rem;max-width:300px;line-height:1.6;">
+            Professional facility and asset protection.<br>
+            Powerful Protection • Outstanding Performance • Uncompromising Standards.
+          </p>
+        </div>
+
+        <div>
+          <h4>Navigate</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Security Services</a>
+          <a href="industries.html">Industries We Serve</a>
+          <a href="security-officers.html">Our Security Officers</a>
+          <a href="compliance.html">Compliance & Licensing</a>
+          <a href="why-us.html">Why Choose Us</a>
+          <a href="quote.html">Request a Quote</a>
+          <a href="contact.html">Contact / Emergency</a>
+          <a href="news.html">News & Updates</a>
+          <a href="gallary.html">Gallery</a>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <p style="font-size:0.88rem;color:#A0AEC0;margin:0 0 8px;">
+            <strong style="color:#E2E8F0;">Managing Director</strong><br>Ismael Karu
+          </p>
+          <p style="font-size:0.88rem;color:#A0AEC0;margin:0 0 6px;">
+            <a href="tel:+67573475422" style="color:#A0AEC0;">(675) 7347 5422</a>
+          </p>
+          <p style="font-size:0.88rem;color:#A0AEC0;margin:0 0 6px;">
+            <a href="mailto:ismaelkaru@gmail.com" style="color:#A0AEC0;">ismaelkaru@gmail.com</a>
+          </p>
+          <p style="font-size:0.88rem;color:#A0AEC0;margin:0;">
+            Lae 411, Morobe Province<br>Papua New Guinea
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 Romanien Protection Limited. All rights reserved. &nbsp;|&nbsp; Managing Director: Ismael Karu
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
